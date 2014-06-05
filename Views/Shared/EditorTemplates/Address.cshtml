@@ -14,7 +14,7 @@
     <tr><td>Address Line 2</td><td>@Html.TextBoxFor(m => m.Line2)
         @Html.HiddenFor(m=>m.Line2)
         </td></tr>
-    <tr><td>Address City</td><td>@Html.TextBoxFor(m => m.City)
+    <tr><td>Address City</td><td>@Html.TextBoxFor(m => m.City, new {placeholder="enter your city" })
         @Html.HiddenFor(m=>m.City)
         </td></tr>
     <tr><td>Address State</td><td>@Html.TextBoxFor(m => m.State)

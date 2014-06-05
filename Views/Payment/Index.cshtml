@@ -6,9 +6,23 @@
 
 <h2>Payment Method</h2>
 
-@using (Html.BeginForm("Index", "Payment"))
+@using (Html.BeginForm("Index", "Payment", FormMethod.Post, new {id = "form1", @class="well" }))
 {
     @Html.ValidationSummary()
+    
+    <form class="well form-search">
+        <div class="container">
+            <input type="text" class="search-query" placeholder="enter search key words" />
+            <div class="row">
+                <div class="col-sm-6 greenback">hola</div>
+                <div class="col-sm-6 yellowback">yohla</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 orangeback">this is 8 columns</div>
+                <div class="col-sm-4 greenback">this has 4 columns</div>
+            </div>
+        </div>
+    </form>
     
     <p>Please select your payment method:</p>
 

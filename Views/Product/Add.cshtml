@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm("Add", "Product"))
 {
-    @Html.TextBoxFor(m => m.SearchModel.Keywords)
+    @Html.TextBoxFor(m => m.SearchModel.Keywords, new {placeholder="enter your search key words." })
     <input type="submit" name="Search" value="Search" />
 }
 
@@ -47,7 +47,7 @@
 
         <h3>Notes</h3>
 
-        @Html.TextBoxFor(m => m.AddProductModel.Notes)
+        @Html.TextBoxFor(m => m.AddProductModel.Notes, new {placeholder = "enter your notes" })
 
         <div>
             <input type="submit" name="Submit" value="Submit" />
