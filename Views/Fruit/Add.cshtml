@@ -1,0 +1,57 @@
+﻿@using System.Web.Mvc.Ajax;
+@model MvcApplication1.Models.Fruit
+
+@{
+    ViewBag.Title = "Add Fruit";
+}
+
+<h2>Add Fruit</h2>
+
+@using (Ajax.BeginForm(new AjaxOptions { }))
+{
+    @Html.ValidationSummary()
+
+    <text>Fruit:</text> @Html.TextBoxFor(m => m.Name) <br />
+    
+
+    <hr />
+    @Html.EditorFor(m=>m.Name)
+    
+    <div>
+        <input type="button" name="Submit" value="Submit" class="submit-button" />
+    </div>
+}
+
+
+@Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+
+<script>
+    $(function () {
+
+        $("input.submit-button").click(function () {
+            var form = $("form");
+            var d = form.serialize();
+            console.log("d is ", d);
+
+            $.ajax({
+                type: "POST",
+                url: "/Fruit/Add",
+                dataType: "json",
+                async: false,
+                cache: false,
+                data: form.serialize(),
+                success: function (result) {
+                    if (result.Message.indexOf("saved") > -1) {
+                        if(confirm(result.Message))
+                        {
+                            location.href = "/Account/Login";
+                        }
+                    }
+                    else {
+                        alert(result.Message);
+                    }
+                }
+            });
+        });
+    });
+</script>

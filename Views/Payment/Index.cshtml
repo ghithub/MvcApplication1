@@ -1,0 +1,46 @@
+﻿@model MvcApplication1.Models.PaymentViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Payment Method</h2>
+
+@using (Html.BeginForm("Index", "Payment"))
+{
+    @Html.ValidationSummary()
+    
+    <p>Please select your payment method:</p>
+
+    @Html.DropDownListFor(m => m.SelectedPaymentMethod,
+    new SelectList(Model.PaymentMethods, "Id", "Name"), "Please select a payment method")
+
+    Html.RenderPartial("_Address", Model.Address);
+    <hr />
+    <div>
+        @{
+    var s = Html.Partial("_Address", Model.Address);
+
+    @Html.Raw(s.ToHtmlString().Replace("City", "Chengshi").Replace("MD", "Maryland")
+            );
+
+        }
+    </div>
+    <hr />
+    <div>
+        @Html.Action("GetAddress", "Home")
+    </div>
+    <hr />
+    <div>
+        <p>Using display template below:</p>
+        @Html.DisplayFor(m => m.Address)
+    </div>
+    <div>
+        <p>Using editor template below:</p>
+        @Html.EditorFor(m => m.Address)
+    </div>
+
+    <div>
+        <input type="submit" value="Submit" name="Submit" />
+    </div>
+}

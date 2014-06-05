@@ -1,0 +1,27 @@
+﻿@model MvcApplication1.Models.Address
+
+<fieldset>
+    <legend>Address Info</legend>
+
+    <table border="1" style="border-collapse:collapse">
+        <tr>
+            <td>Address Line 1</td>
+            <td>
+                @Html.EditorFor(m => m.Line1)
+                @Html.HiddenFor(m=>m.Line1)
+        </td>
+    </tr>
+    <tr><td>Address Line 2</td><td>@Html.TextBoxFor(m => m.Line2)
+        @Html.HiddenFor(m=>m.Line2)
+        </td></tr>
+    <tr><td>Address City</td><td>@Html.TextBoxFor(m => m.City)
+        @Html.HiddenFor(m=>m.City)
+        </td></tr>
+    <tr><td>Address State</td><td>@Html.TextBoxFor(m => m.State)
+        @Html.HiddenFor(m=>m.State)
+        </td></tr>
+    <tr><td>Address Zip</td><td>@Html.TextBoxFor(m => m.Zip)
+        @Html.HiddenFor(m=>m.Zip)
+        </td></tr>
+</table>
+</fieldset>

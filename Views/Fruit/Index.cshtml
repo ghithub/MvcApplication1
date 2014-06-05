@@ -1,0 +1,42 @@
+﻿@model MvcApplication1.Models.FruitViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Select your favorite fruits</h2>
+
+@using (Html.BeginForm("Index", "Fruit")) {
+    
+    @Html.ValidationSummary()
+    
+    <p>Using Html helper method:</p>
+    for (int i = 0; i < Model.Fruits.Count; i++) {
+    @Html.CheckBoxFor(m => m.Fruits[i].Selected) @Model.Fruits[i].Name<br />
+    @Html.HiddenFor(m => m.Fruits[i].Id)
+    @Html.HiddenFor(m => m.Fruits[i].Name)
+    }
+
+@*<p>Plain html without html helper</p>
+
+    for (int i = 0; i < Model.Fruits.Count; i++)
+    {
+        <input type="checkbox" name="SelectedFruits" value="@Model.Fruits[i].Id" checked="@Model.Fruits[i].Selected" />
+        @Model.Fruits[i].Name<br />
+    }*@
+
+    <p>
+        Enter fruit:
+    @Html.TextBoxFor(m => m.NewFruit.Name)
+        <br />
+
+        @Html.EditorFor(m=>m.NewFruit.Name)
+    </p>
+    @Html.Action("GetAddress", "Home")
+    
+    <input type="submit" name="submit" value="Submit" />
+}
+
+<script>
+
+</script>

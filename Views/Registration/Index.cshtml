@@ -1,0 +1,29 @@
+﻿@model MvcApplication1.Models.PropertyRegistrationViewModel
+
+@{
+    ViewBag.Title = "Property Registration";
+}
+
+<h2>Property Registration</h2>
+<p>Enter your property and agent information below.</p>
+@using (Html.BeginForm("Index", "Registration"))
+{
+    @Html.ValidationSummary();
+    
+    <h4>Property Info</h4>
+    <text>House Number</text> @Html.TextBoxFor(m => m.Property.HouseNumber)<br />
+    <text>Street</text> @Html.TextBoxFor(m => m.Property.Street)<br />
+    <text>City</text> @Html.TextBoxFor(m => m.Property.City)<br />
+    <text>State</text> @Html.TextBoxFor(m => m.Property.State)<br />
+    <text>Zip</text> @Html.TextBoxFor(m => m.Property.Zip)<br />
+    <text>Price</text> @Html.TextBoxFor(m => m.Property.Price)<br />
+
+    <h4>Agent Info</h4>
+    <text>First Name</text> @Html.TextBoxFor(m => m.Agent.FirstName)<br />
+    <text>Last Name</text> @Html.TextBoxFor(m => m.Agent.LastName)<br />
+    <text>Annual Sales</text> @Html.TextBoxFor(m => m.Agent.AnnualSales)<br />
+    <text>Agent Address L1</text>@Html.TextBoxFor(m => m.Agent.Address.Line1)<br />
+    <text>Agent Address L2</text>@Html.TextBoxFor(m => m.Agent.Address.Line2)<br />
+
+    <input type="submit" value="Submit" name="submit" />
+}

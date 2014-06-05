@@ -1,0 +1,16 @@
+﻿@model MvcApplication1.Models.Address
+
+<div>
+    <fieldset>
+        <legend><h3>Address</h3></legend>
+        <text>Line 1:</text>
+        @Html.DisplayFor(m => m.Line1)<br />
+        <text>Line 2:</text>@Html.DisplayFor(m => m.Line2)<br />
+        <text>City:</text>
+        @Html.DisplayFor(m => m.City)<br />
+        <text>State:</text>
+        @Html.DisplayFor(m => m.State)<br />
+        <text>Zip:</text>
+        @Html.DisplayFor(m => m.Zip)<br />
+    </fieldset>
+</div>

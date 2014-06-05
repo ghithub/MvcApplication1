@@ -1,0 +1,22 @@
+﻿@model MvcApplication1.Models.Person
+
+@{
+    ViewBag.Title = "Person";
+}
+
+<h2>Person</h2>
+
+@using (Html.BeginForm())
+{
+    <text>        First Name</text> @Html.TextBoxFor(m => m.FirstName)<br />
+    <text>
+        Last Name</text> @Html.TextBoxFor(m => m.LastName)<br />
+        <text>Gender</text><br /> @Html.RadioButtonFor(m => m.Gender, "M", new { name = "Gender" }) <text>Male</text><br />
+        @Html.RadioButtonFor(m => m.Gender, "F", new { name = "Gender" }) <text>Female</text>
+
+        <br />
+        <input type="submit" name="submit" value="Submit" />
+    
+    <text>Full name is </text>@Html.DisplayFor(m => m.FullName);
+    
+}
