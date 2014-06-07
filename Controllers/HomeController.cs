@@ -17,6 +17,16 @@ namespace MvcApplication1.Controllers
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
         public PartialViewResult GetAddress()
         {
             Address a = new Address { Line1 = "123 4th Ave SW", Line2="APT 202", City = "Washington", State="DC", Zip="20028" };
