@@ -769,3 +769,32 @@ th.student-id, td.student-id {
 .orangeback {
     background-color: orange;
 }
+
+.grayback{
+    background-color: gray;
+}
+
+.lightgrayback{
+    background-color: lightgray;
+}
+
+.ghostwhiteback{
+    background-color: ghostwhite;
+}
+
+.cyanback{
+    background-color: cyan;
+}
+
+.azureback
+{
+    background-color: azure;
+}
+
+.show-grid [class^=col-]
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: lightgray;
+    border: 1px solid rgba(86,61,1241,.2);
+}
